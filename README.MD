@@ -21,6 +21,11 @@ export ARCH=arm
 export CROSS_COMPILE=~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-
 ```
 
+If you compile on a x64-machine you need to change the last export to 
+```
+export CROSS_COMPILE=~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-
+```
+
 For Raspberry Pi:
 ```
 make bcmrpi_rt_defconfig
