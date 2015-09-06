@@ -1,0 +1,27 @@
+Broadcom BCM2835 auxiliar device enable register
+
+the BCM2835 contains 3 auxiliar devices (spi1/spi2/uart1)
+which need to get enabled via a shared register.
+
+Required properties:
+- compatible: Should be "brcm,bcm2835-aux".
+- reg: Should contain register location and length for the
+       enable register
+
+Example:
+
+aux_enable: aux_enable@0x7e215004 {
+	compatible = "bcrm,bcm2835-aux";
+	reg = <0x7e215004 0x04>;
+};
+
+Typically used in the respective auxiliar device descriptions
+like this:
+
+uart1: uart@7e215040 {
+	...
+	brcm,aux-enable = <&aux_enable 1>;
+	...
+};
+
+The name of the property can be device/driver specific.
