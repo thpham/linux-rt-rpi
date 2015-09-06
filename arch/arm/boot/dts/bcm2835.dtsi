@@ -186,18 +186,7 @@
 			clocks = <&clk_spi>;
 			#address-cells = <1>;
 			#size-cells = <0>;
-			status = "disabled";
-		};
-
-		spi2: spi@7e2150c0 {
-			compatible = "brcm,bcm2835-aux-spi";
-			reg = <0x7e2150c0 0x40>;
-			brcm,aux-enable = <&aux_enable 4>;
-			interrupts = <1 29>;
-			clocks = <&clk_spi>;
-			#address-cells = <1>;
-			#size-cells = <0>;
-			status = "disabled";
+			status = "okay";
 		};
 	};
 
