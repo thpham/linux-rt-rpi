@@ -162,6 +162,43 @@
 		arm-pmu {
 			compatible = "arm,arm1176-pmu";
 		};
+
+		aux_enable: aux_enable@0x7e215004 {
+			compatible = "brcm,bcm2835-aux";
+			reg = <0x7e215004 0x04>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		uart1: uart@7e215040 {
+			compatible = "brcm,bcm2835-aux-uart";
+			reg = <0x7e215040 0x40>;
+			interrupts = <1 29>;
+			brcm,aux-enable = <&aux_enable 1>;
+			status = "disabled";
+		};
+
+		spi1: spi@7e215080 {
+			compatible = "brcm,bcm2835-aux-spi";
+			reg = <0x7e215080 0x40>;
+			brcm,aux-enable = <&aux_enable 2>;
+			interrupts = <1 29>;
+			clocks = <&clk_spi>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		spi2: spi@7e2150c0 {
+			compatible = "brcm,bcm2835-aux-spi";
+			reg = <0x7e2150c0 0x40>;
+			brcm,aux-enable = <&aux_enable 4>;
+			interrupts = <1 29>;
+			clocks = <&clk_spi>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
 	};
 
 	clocks {
