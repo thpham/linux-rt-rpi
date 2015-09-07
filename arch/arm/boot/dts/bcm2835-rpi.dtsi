@@ -149,7 +149,8 @@
 / {
 	__overrides__ {
 		i2s = <&i2s>,"status";
-		spi = <&spi0>,"status";
+		spi0 = <&spi0>,"status";
+		spi1 = <&spi1>,"status";
 		i2c0 = <&i2c0>,"status";
 		i2c1 = <&i2c1>,"status";
 		i2c0_baudrate = <&i2c0>,"clock-frequency:0";
