@@ -119,14 +119,6 @@
 		#size-cells = <0>;
 		spi-max-frequency = <500000>;
 	};
-
-	spidev@3{
-		compatible = "spidev";
-		reg = <1>;	/* CE1 */
-		#address-cells = <1>;
-		#size-cells = <0>;
-		spi-max-frequency = <500000>;
-	};
 };
 
 &i2c0 {
