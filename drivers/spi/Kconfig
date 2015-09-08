@@ -97,7 +97,7 @@ config SPI_BCM2708
 
 config SPI_BCM2835AUX
 	tristate "BCM2835 SPI auxiliar controller"
-	depends on ARCH_BCM2835 || COMPILE_TEST
+	depends on ARCH_BCM2709 || ARCH_BCM2835 || COMPILE_TEST
 	depends on GPIOLIB
 	select SOC_BCM2835_AUX
 	help

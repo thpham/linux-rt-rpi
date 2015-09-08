@@ -4,7 +4,7 @@
 config SOC_BCM2835_AUX
 	tristate "Broadcom BCM2835 aux"
 	depends on OF
-	depends on ARCH_BCM2835 || COMPILE_TEST
+	depends on ARCH_BCM2709 || ARCH_BCM2835 || COMPILE_TEST
 
 	help
 	  Support to enable/disable the BCM2835 auxiliar

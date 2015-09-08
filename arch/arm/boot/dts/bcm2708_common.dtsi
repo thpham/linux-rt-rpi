@@ -16,6 +16,7 @@
 		uart0 = &uart0;
 		i2s  = &i2s;
 		spi0 = &spi0;
+		spi1 = &spi1;
 		i2c0 = &i2c0;
 		uart1 = &uart1;
 		mmc = &mmc;
@@ -141,6 +142,25 @@
 			 * (but do not forget to make them output!)
 			 */
 			cs-gpios = <0>, <0>;
+		};
+
+		aux_enable: aux_enable@0x7e215004 {
+			compatible = "brcm,bcm2835-aux";
+			reg = <0x7e215004 0x04>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		spi1: spi@7e215080 {
+			compatible = "brcm,bcm2835-aux-spi";
+			reg = <0x7e215080 0x40>;
+			brcm,aux-enable = <&aux_enable 2>;
+			interrupts = <1 29>;
+			clocks = <&clk_core>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			cs-gpios = <&gpio 16 1>;
+			status = "disabled";
 		};
 
 		i2c0: i2c@7e205000 {

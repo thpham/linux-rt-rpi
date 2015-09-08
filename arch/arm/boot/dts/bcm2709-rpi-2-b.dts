@@ -13,6 +13,11 @@
 		brcm,function = <4>; /* alt0 */
 	};
 
+	spi1_pins: spi1_pins {
+		brcm,pins = <19 20 21>;
+		brcm,function = <3>; /* alt4 */
+	};
+
 	i2c0_pins: i2c0 {
 		brcm,pins = <0 1>;
 		brcm,function = <4>;
@@ -63,6 +68,19 @@
 	};
 };
 
+&spi1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&spi1_pins>;
+
+	spidev@0{
+		compatible = "spidev";
+		reg = <0>;	/* CE0 */
+		#address-cells = <1>;
+		#size-cells = <0>;
+		spi-max-frequency = <500000>;
+	};
+};
+
 &i2c0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c0_pins>;
@@ -105,7 +123,8 @@
 		uart0_clkrate = <&clk_uart0>,"clock-frequency:0";
 		uart1_clkrate = <&uart1>,"clock-frequency:0";
 		i2s = <&i2s>,"status";
-		spi = <&spi0>,"status";
+		spi0 = <&spi0>,"status";
+		spi1 = <&spi1>,"status";
 		i2c0 = <&i2c0>,"status";
 		i2c1 = <&i2c1>,"status";
 		i2c2_iknowwhatimdoing = <&i2c2>,"status";
