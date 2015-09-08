@@ -186,6 +186,7 @@
 			clocks = <&clk_spi>;
 			#address-cells = <1>;
 			#size-cells = <0>;
+			cs-gpios = <&gpio 16 1>;
 			status = "disabled";
 		};
 	};
