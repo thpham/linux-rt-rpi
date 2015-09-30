@@ -1,0 +1,36 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+        compatible = "brcm,bcm2709";
+
+        fragment@0 {
+            target = <&gpio>;
+            __overlay__ {
+                spi1_pins: spi1_pins {
+                    brcm,pins = <19 20 21>;
+                    brcm,function = <3>; /* alt4 */
+                };
+            };
+        };
+
+
+        fragment@1 {
+                target = <&spi1>;
+                __overlay__ {
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+                        status = "okay";
+                        pinctrl-names = "default";
+                        pinctrl-0 = <&spi1_pins>;
+
+                        spidev@0{
+                            compatible = "spidev";
+                            reg = <0>;	/* CE0 */
+                            #address-cells = <1>;
+                            #size-cells = <0>;
+                            spi-max-frequency = <2000000>;
+                        };
+                };
+        };
+};
