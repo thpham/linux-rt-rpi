@@ -18,6 +18,11 @@
         brcm,function = <3>; /* alt4 */
     };
 
+    spi1_cs_pins: spi1_cs_pins {
+        brcm,pins = <16>;
+        brcm,function = <1>; /* alt4 */
+    };
+
 	i2c0_pins: i2c0 {
 		brcm,pins = <0 1>;
 		brcm,function = <4>;
@@ -70,7 +75,7 @@
 
 &spi1 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&spi1_pins>;
+	pinctrl-0 = <&spi1_pins &spi1_cs_pins>;
 };
 
 &i2c0 {
