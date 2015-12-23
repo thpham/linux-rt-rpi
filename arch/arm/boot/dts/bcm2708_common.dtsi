@@ -141,7 +141,7 @@
 			 * add more gpios if necessary as <&gpio 6 1>
 			 * (but do not forget to make them output!)
 			 */
-			cs-gpios = <0>, <0>;
+            cs-gpios = <0>, <0>, <&gpio 22 0>, <&gpio 25 0>;
 		};
 
 		aux_enable: aux_enable@0x7e215004 {
