@@ -112,6 +112,7 @@ dtbo-$(RPI_DT_OVERLAYS) += w1-gpio-pullup.dtbo
 dtbo-$(RPI_DT_OVERLAYS) += wittypi.dtbo
 
 dtbo-$(RPI_DT_OVERLAYS) += spi0-4cs.dtbo
+dtbo-$(RPI_DT_OVERLAYS) += navio-rgb.dtbo
 
 targets += dtbs dtbs_install
 targets += $(dtbo-y)
