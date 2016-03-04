@@ -63,6 +63,7 @@ dtb-$(RPI_DT_OVERLAYS) += smi-nand-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += smi-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += spi1-1cs-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += spi1-2cs-overlay.dtb
+dtb-$(RPI_DT_OVERLAYS) += spi0-2cs-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += spi1-3cs-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += spi2-1cs-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += spi2-2cs-overlay.dtb
