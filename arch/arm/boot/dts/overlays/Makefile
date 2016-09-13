@@ -75,6 +75,7 @@ dtb-$(RPI_DT_OVERLAYS) += vc4-kms-v3d-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += vga666-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += w1-gpio-overlay.dtb
 dtb-$(RPI_DT_OVERLAYS) += w1-gpio-pullup-overlay.dtb
+dtb-$(RPI_DT_OVERLAYS) += navio-rgb-overlay.dtb
 
 targets += dtbs dtbs_install
 targets += $(dtb-y)
