@@ -1085,10 +1085,29 @@ static int ath9k_hif_request_firmware(struct hif_device_usb *hif_dev,
 	char index[8], *chip;
 	int ret;
 
+
+// CHANGES
+
+/*	int randwait;
+	int mstimerandwait;
+
+	
+
+	get_random_bytes(&randwait, sizeof(int));
+	randwait = randwait % 10;
+
+	mstimerandwait = randwait * 100;
+
+	msleep(mstimerandwait);
+*/
+	msleep(1000);
+
+
+	// CHANGES: re-use debug firmware parameter for loading firmwares with different bitrates
 	if (first) {
-		if (htc_use_dev_fw) {
+		if (htc_fw_bitrate) {
 			hif_dev->fw_minor_index = FIRMWARE_MINOR_IDX_MAX + 1;
-			sprintf(index, "%s", "dev");
+			sprintf(index, "%d", htc_fw_bitrate);
 		} else {
 			hif_dev->fw_minor_index = FIRMWARE_MINOR_IDX_MAX;
 			sprintf(index, "%d", hif_dev->fw_minor_index);
