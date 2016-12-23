@@ -38,9 +38,11 @@ static int ath9k_ps_enable;
 module_param_named(ps_enable, ath9k_ps_enable, int, 0444);
 MODULE_PARM_DESC(ps_enable, "Enable WLAN PowerSave");
 
-int htc_use_dev_fw = 0;
-module_param_named(use_dev_fw, htc_use_dev_fw, int, 0444);
-MODULE_PARM_DESC(use_dev_fw, "Use development FW version");
+// CHANGES: re-use dev firmware parameter for different bitrate firmwares
+int htc_fw_bitrate = 0;
+module_param_named(fw_bitrate, htc_fw_bitrate, int, 0444);
+MODULE_PARM_DESC(fw_bitrate, "Set Firmware with bitrate to be loaded");
+
 
 #ifdef CONFIG_MAC80211_LEDS
 int ath9k_htc_led_blink = 1;

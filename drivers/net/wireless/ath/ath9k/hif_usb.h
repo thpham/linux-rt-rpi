@@ -36,7 +36,8 @@
 			__stringify(MAJOR_VERSION_REQ) \
 			"." __stringify(FIRMWARE_MINOR_IDX_MAX) ".0.fw"
 
-extern int htc_use_dev_fw;
+// CHANGES: variable for firmware parameter
+extern int htc_fw_bitrate;
 
 #define IS_AR7010_DEVICE(_v) (((_v) == AR9280_USB) || ((_v) == AR9287_USB))
 
@@ -61,7 +62,7 @@ extern int htc_use_dev_fw;
 #define MAX_PKT_NUM_IN_TRANSFER 10
 
 #define MAX_REG_OUT_URB_NUM  1
-#define MAX_REG_IN_URB_NUM   64
+#define MAX_REG_IN_URB_NUM   8
 
 #define MAX_REG_IN_BUF_SIZE 64
 
